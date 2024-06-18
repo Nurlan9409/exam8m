@@ -1,0 +1,21 @@
+
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+		<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+							{% for product in products %}
+							<a href="{% url 'shop-detail' product.id %}"><img src="{{product.image.url}}" class="img-fluid w-100 rounded-top" alt=""></a>
+							<h3>{{product.title}}</h3>
+						{% endfor %}
+					</div>
+					<!-- End Column 1 -->
+		      	</div>
+		    </div>
+		</div>
+{% endblock %}
